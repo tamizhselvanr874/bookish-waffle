@@ -3,13 +3,6 @@ import streamlit as st
 import pandas as pd  
 import openai  
   
-# Set up environment variables  
-os.environ["AZURE_OPENAI_API_KEY"] = "783973291a7c4a74a1120133309860c0"  
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://theswedes.openai.azure.com/"  
-os.environ["OPENAI_API_TYPE"] = "azure"  
-os.environ["OPENAI_API_VERSION"] = "2024-05-01-preview"  
-os.environ["AZURE_DEPLOYMENT_NAME"] = "GPT-4-Omni"  
-  
 # Configuration  
 API_KEY = os.getenv("AZURE_OPENAI_API_KEY")  
 ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")  
