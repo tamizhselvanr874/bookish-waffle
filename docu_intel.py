@@ -31,16 +31,19 @@ def generate_prompt(method, context, goal):
 def evaluate_prompt(method, context, goal):  
     prompt = generate_prompt(method, context, goal)  
     try:  
-        response = openai.Completion.create(  
+        response = openai.ChatCompletion.create(  
             engine=DEPLOYMENT_NAME,  
-            prompt=prompt,  
+            messages=[  
+                {"role": "system", "content": "You are an AI assistant."},  
+                {"role": "user", "content": prompt}  
+            ],  
             max_tokens=512,  
             temperature=0.5,  
             top_p=0.9,  
             frequency_penalty=0,  
             presence_penalty=0,  
         )  
-        return response.choices[0].text.strip()  
+        return response.choices[0].message['content'].strip()  
     except Exception as e:  
         st.error(f"Error: {str(e)}")  
         return ""  
