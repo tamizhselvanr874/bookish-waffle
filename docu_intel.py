@@ -1,13 +1,12 @@
-import os  
 import streamlit as st  
 import pandas as pd  
 import openai  
   
 # Configuration  
-API_KEY = os.getenv("AZURE_OPENAI_API_KEY")  
-ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")  
-API_VERSION = os.getenv("OPENAI_API_VERSION")  
-DEPLOYMENT_NAME = os.getenv("AZURE_DEPLOYMENT_NAME")  
+API_KEY = "783973291a7c4a74a1120133309860c0"  
+ENDPOINT = "https://theswedes.openai.azure.com/"  
+API_VERSION = "2024-05-01-preview"  
+DEPLOYMENT_NAME = "GPT-4-Omni"  
   
 # Initialize OpenAI client  
 openai.api_type = "azure"  
